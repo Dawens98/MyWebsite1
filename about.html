@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Harpsale</title>
+<meta name="description" content="Learn about Harpsale — our story, mission, and vision for curating the world's finest handcrafted harps for musicians and collectors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#211c17;
+  --parchment:#f4eede;
+  --parchment-dim:#ece3cd;
+  --brass:#a9813f;
+  --brass-light:#c9a35e;
+  --wine:#5c2430;
+  --ivory:#fbf8f1;
+  --line:rgba(33,28,23,0.14);
+
+  --font-display:'Fraunces', serif;
+  --font-body:'Work Sans', sans-serif;
+
+  --max:1180px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--ivory);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;margin:0;padding:0;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--brass);
+  outline-offset:3px;
+}
+
+/* ---------- Image placeholder slots ---------- */
+.img-slot{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(33,28,23,0.05) 0 10px,
+      rgba(33,28,23,0.02) 10px 20px);
+  border:1.5px dashed rgba(33,28,23,0.3);
+  color:rgba(33,28,23,0.55);
+  font-family:var(--font-body);
+  font-size:13px;
+  letter-spacing:.03em;
+  padding:16px;
+}
+.img-slot span{max-width:220px;}
+.img-slot small{display:block;margin-top:6px;opacity:.75;font-size:11px;}
+
+/* ---------- Announcement bar ---------- */
+.announce{
+  background:var(--ink);
+  color:var(--parchment);
+  text-align:center;
+  font-size:13px;
+  letter-spacing:.04em;
+  padding:9px 16px;
+}
+
+/* ---------- Header ---------- */
+header{
+  background:var(--ivory);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.nav-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 24px;
+}
+.logo{
+  font-family:var(--font-display);
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.logo-img{width:110px;height:auto;}.logo em{font-style:normal;color:var(--wine);}
+nav.primary ul{display:flex;gap:36px;}
+nav.primary a{
+  font-size:14px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  position:relative;
+  padding-bottom:4px;
+}
+nav.primary a::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:1px;
+  background:var(--brass);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+}
+nav.primary a:hover::after,
+nav.primary a:focus-visible::after{transform:scaleX(1);}
+nav.primary a[aria-current="page"]{color:var(--wine);}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:8px 10px;
+  font-size:14px;
+  font-family:var(--font-body);
+  cursor:pointer;
+}
+
+@media (prefers-reduced-motion: reduce){
+  nav.primary a::after{transition:none;}
+  html{scroll-behavior:auto;}
+}
+
+/* ---------- Section shell ---------- */
+section{padding:96px 0;}
+.section-head{
+  max-width:640px;
+  margin:0 auto 56px;
+  text-align:center;
+}
+.section-head .kicker{
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--wine);
+  margin-bottom:14px;
+}
+.section-head h2{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(30px,4vw,42px);
+  margin:0 0 18px;
+}
+.section-head p{
+  color:rgba(33,28,23,0.72);
+  font-size:16px;
+}
+
+/* ---------- Page header (About intro) ---------- */
+.page-header{
+  background:var(--parchment);
+  padding:72px 0 56px;
+  text-align:center;
+}
+.page-header h1{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(34px,5vw,52px);
+  margin:0 0 22px;
+  letter-spacing:.02em;
+}
+.page-header p{
+  max-width:720px;
+  margin:0 auto;
+  color:rgba(33,28,23,0.75);
+  font-size:16px;
+}
+
+/* ---------- Full-width photo bands ---------- */
+.photo-band{padding:0;}
+.photo-band .img-slot{
+  aspect-ratio:1440/688;
+  border-radius:0;
+  border-left:none;
+  border-right:none;
+}
+.photo-band.tall .img-slot{aspect-ratio:1920/720;}
+
+/* ---------- Mission & Vision ---------- */
+.mission-vision{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+}
+.mv-card h3{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:24px;
+  margin:0 0 16px;
+  color:var(--wine);
+}
+.mv-card p{
+  color:rgba(33,28,23,0.75);
+  font-size:16px;
+  margin:0;
+}
+
+/* ---------- Reviews ---------- */
+.reviews{background:var(--parchment);}
+.reviews-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+.review-card{
+  background:var(--ivory);
+  border:1px solid var(--line);
+  padding:32px;
+}
+.stars{
+  color:var(--brass);
+  letter-spacing:2px;
+  font-size:15px;
+  margin-bottom:16px;
+}
+.review-quote{
+  font-family:var(--font-display);
+  font-size:18px;
+  line-height:1.5;
+  margin:0 0 24px;
+}
+.review-author{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.review-author .avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  flex-shrink:0;
+  font-size:9px;
+  padding:4px;
+}
+.review-author .name{
+  font-family:var(--font-display);
+  font-size:15px;
+  font-weight:500;
+}
+.review-author .city{
+  font-size:13px;
+  color:rgba(33,28,23,0.6);
+}
+
+/* ---------- Footer ---------- */
+footer{
+  background:var(--parchment-dim);
+  padding:64px 0 32px;
+  font-size:14px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:40px;
+  margin-bottom:48px;
+}
+footer .logo{margin-bottom:14px;}
+footer .foot-tagline{color:rgba(33,28,23,0.7);max-width:300px;}
+footer h4{
+  font-family:var(--font-body);
+  font-size:13px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin:0 0 16px;
+  color:rgba(33,28,23,0.6);
+}
+.social-list{display:flex;flex-direction:column;gap:10px;}
+.contact-list{display:flex;flex-direction:column;gap:10px;}
+.footer-bottom{
+  border-top:1px solid var(--line);
+  padding-top:24px;
+  text-align:center;
+  color:rgba(33,28,23,0.6);
+  font-size:13px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  .mission-vision{grid-template-columns:1fr;gap:32px;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  nav.primary{
+    position:absolute;
+    top:100%;left:0;right:0;
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+    display:none;
+  }
+  nav.primary.open{display:block;}
+  nav.primary ul{
+    flex-direction:column;
+    gap:0;
+    padding:8px 24px 20px;
+  }
+  nav.primary li{border-top:1px solid var(--line);}
+  nav.primary a{display:block;padding:14px 0;}
+  .menu-toggle{display:inline-block;}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">Discover exclusive discounts on rare harps!</div>
+
+<header>
+  <div class="nav-row wrap">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Harpsale" class="logo-img"></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" id="menuToggle">Menu</button>
+    <nav class="primary" id="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="harps.html">Harps</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= PAGE HEADER / INTRO ================= -->
+  <div class="page-header">
+    <h1>About Us</h1>
+    <p>At Harpsale, we celebrate the timeless beauty and enchanting sounds of harps. Our journey began with a deep passion for music and an appreciation for the intricate artistry involved in crafting these exquisite instruments. Over the years, we have dedicated ourselves to curating a diverse collection of the finest harps from renowned makers such as Lyon &amp; Healy, Erard, and Wurlitzer. Each harp in our collection is meticulously selected for its superior craftsmanship, tonal quality, and aesthetic appeal, ensuring that whether you are a professional musician, a beginner, or a collector, you will find an instrument that meets your needs and exceeds your expectations.</p>
+  </div>
+
+  <!-- ================= PHOTO ================= -->
+  <section class="photo-band">
+    <img src="harpsAboutPagePic1.jpg" alt="..."> 
+       
+  </section>
+
+  <!-- ================= MISSION & VISION ================= -->
+  <section>
+    <div class="wrap">
+      <div class="mission-vision">
+        <div class="mv-card">
+          <h3>Our mission</h3>
+          <p>To provide exceptional harps that inspire creativity, elevate musical expression, and bring timeless beauty into the lives of musicians, collectors, and enthusiasts. We are dedicated to offering expertly curated instruments, personalized guidance, and outstanding service to support every step of our customers' musical journey.</p>
+        </div>
+        <div class="mv-card">
+          <h3>Our vision</h3>
+          <p>To be the world's most trusted destination for harps, celebrated for preserving the artistry of fine craftsmanship while inspiring a global community of harpists to create, perform, and share the magic of music.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PHOTO (WIDE) ================= -->
+  <section class="photo-band tall">
+     <img src="harpsAboutPagePic2.jpg" alt="..."> 
+        
+  </section>
+
+  
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Harp<em>sale</em></a>
+        <p class="foot-tagline">Rare and handcrafted harps for musicians and collectors, curated with care.</p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="social-list">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://x.com/" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <div class="contact-list">
+          <a href="mailto:Harpsaless@gmail.com">Harpsaless@gmail.com</a>
+          <a href="tel:+13476950761">+1 347-695-0761</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2026 Harpsale — All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('primary-nav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

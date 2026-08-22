@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyon & Healy Style 12 | Harpsale</title>
+<meta name="description" content="Lyon & Healy Style 12 — a rare, handcrafted harp available at Harpsale. View details and contact us to arrange a purchase.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#211c17;
+  --parchment:#f4eede;
+  --parchment-dim:#ece3cd;
+  --brass:#a9813f;
+  --brass-light:#c9a35e;
+  --wine:#5c2430;
+  --ivory:#fbf8f1;
+  --line:rgba(33,28,23,0.14);
+  --font-display:'Fraunces', serif;
+  --font-body:'Work Sans', sans-serif;
+  --max:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--ivory);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;margin:0;padding:0;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+
+.img-slot{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:repeating-linear-gradient(135deg,rgba(33,28,23,0.05) 0 10px,rgba(33,28,23,0.02) 10px 20px);
+  border:1.5px dashed rgba(33,28,23,0.3);
+  color:rgba(33,28,23,0.55);
+  font-family:var(--font-body);font-size:13px;letter-spacing:.03em;padding:16px;
+}
+.img-slot span{max-width:220px;}
+.img-slot small{display:block;margin-top:6px;opacity:.75;font-size:11px;}
+
+.desc-placeholder{
+  border:1.5px dashed rgba(33,28,23,0.3);
+  background:repeating-linear-gradient(135deg,rgba(33,28,23,0.04) 0 10px,rgba(33,28,23,0.015) 10px 20px);
+  color:rgba(33,28,23,0.6);
+  padding:22px 24px;
+  font-size:14px;
+  line-height:1.6;
+}
+.desc-placeholder strong{display:block;margin-bottom:6px;color:var(--wine);font-family:var(--font-display);font-size:15px;}
+
+.announce{background:var(--ink);color:var(--parchment);text-align:center;font-size:13px;letter-spacing:.04em;padding:9px 16px;}
+
+header{background:var(--ivory);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+.logo{font-family:var(--font-display);font-size:24px;font-weight:600;letter-spacing:.02em;}
+.logo-img{width:110px;height:auto;}.logo em{font-style:normal;color:var(--wine);}
+nav.primary ul{display:flex;gap:36px;}
+nav.primary a{font-size:14px;letter-spacing:.06em;text-transform:uppercase;position:relative;padding-bottom:4px;}
+nav.primary a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+nav.primary a:hover::after,nav.primary a:focus-visible::after{transform:scaleX(1);}
+nav.primary a[aria-current="page"]{color:var(--wine);}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:4px;padding:8px 10px;font-size:14px;font-family:var(--font-body);cursor:pointer;}
+@media (prefers-reduced-motion: reduce){nav.primary a::after{transition:none;}html{scroll-behavior:auto;}}
+
+.breadcrumb{
+  padding:20px 0 0;
+  font-size:13px;
+  color:rgba(33,28,23,0.55);
+}
+.breadcrumb a{color:var(--wine);}
+.breadcrumb a:hover{text-decoration:underline;}
+
+.product-detail{padding:32px 0 96px;}
+.product-layout{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:56px;
+  align-items:start;
+}
+.product-photo .img-slot{aspect-ratio:4/3;border-radius:2px;}
+.product-info h1{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(28px,3.6vw,40px);
+  margin:0 0 14px;
+}
+.product-info .price{
+  font-size:22px;
+  color:var(--wine);
+  margin:0 0 28px;
+}
+.product-info .desc{
+  font-size:16px;
+  color:rgba(33,28,23,0.78);
+  margin:0 0 32px;
+}
+.btn{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:15px 30px;
+  border-radius:2px;
+  background:var(--brass-light);
+  color:var(--ink);
+  transition:background .2s ease, transform .2s ease;
+}
+.btn:hover{background:var(--wine);color:var(--ivory);transform:translateY(-1px);}
+@media (prefers-reduced-motion: reduce){.btn{transition:none;}}
+
+footer{background:var(--parchment-dim);padding:64px 0 32px;font-size:14px;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+footer .logo{margin-bottom:14px;}
+footer .foot-tagline{color:rgba(33,28,23,0.7);max-width:300px;}
+footer h4{font-family:var(--font-body);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 16px;color:rgba(33,28,23,0.6);}
+.social-list{display:flex;flex-direction:column;gap:10px;}
+.contact-list{display:flex;flex-direction:column;gap:10px;}
+.footer-bottom{border-top:1px solid var(--line);padding-top:24px;text-align:center;color:rgba(33,28,23,0.6);font-size:13px;}
+
+@media (max-width:860px){
+  .product-layout{grid-template-columns:1fr;gap:32px;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  nav.primary{position:absolute;top:100%;left:0;right:0;background:var(--ivory);border-bottom:1px solid var(--line);display:none;}
+  nav.primary.open{display:block;}
+  nav.primary ul{flex-direction:column;gap:0;padding:8px 24px 20px;}
+  nav.primary li{border-top:1px solid var(--line);}
+  nav.primary a{display:block;padding:14px 0;}
+  .menu-toggle{display:inline-block;}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">Discover exclusive discounts on rare harps!</div>
+
+<header>
+  <div class="nav-row wrap">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Harpsale" class="logo-img"></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" id="menuToggle">Menu</button>
+    <nav class="primary" id="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" aria-current="page">Shop</a></li>
+        <li><a href="harps.html">Harps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap breadcrumb">
+    <a href="shop.html">Shop</a> / Lyon & Healy Style 12
+  </div>
+
+  <section class="product-detail">
+    <div class="wrap">
+      <div class="product-layout">
+        <div class="product-photo">
+           <img src="image2.jpg" alt="Lyon & Healy Style 12"> 
+          
+        </div>
+        <div class="product-info">
+          <h1>Lyon & Healy Style 12</h1>
+          <div class="price">$13,000</div>
+          <p class="desc">Discover our exquisite collection of rare and handcrafted harps, including the Lyon & Healy Style 12 and Erard Louis VI Scroll Top. Each instrument is a masterpiece, offering elegance and rich history. Enjoy detailed descriptions, transparent pricing, and secure worldwide shipping. Our care guides and testimonials help you choose the perfect harp with confidence.</p>
+          <a class="btn" href="contact.html">Contact About This Harp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="logo">Harp<em>sale</em></a>
+        <p class="foot-tagline">Rare and handcrafted harps for musicians and collectors, curated with care.</p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="social-list">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://x.com/" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <div class="contact-list">
+          <a href="mailto:Harpsaless@gmail.com">Harpsaless@gmail.com</a>
+          <a href="tel:+13476950761">+1 347-695-0761</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2026 Harpsale — All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('primary-nav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rare Handcrafted Harps for Musicians and Collectors | Harpsale</title>
+<meta name="description" content="Discover harpsale.com, your destination for rare and handcrafted harps. Explore our curated collection, with detailed descriptions, transparent pricing, and secure worldwide shipping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211c17;
+    --parchment:#f4eede;
+    --parchment-dim:#ece3cd;
+    --brass:#a9813f;
+    --brass-light:#c9a35e;
+    --wine:#5c2430;
+    --ivory:#fbf8f1;
+    --line:rgba(33,28,23,0.14);
+
+    --font-display:'Fraunces', serif;
+    --font-body:'Work Sans', sans-serif;
+
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+  a:focus-visible,
+  button:focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:3px;
+  }
+
+  /* ---------- Image placeholder slots ---------- */
+  /* Swap these for real <img src="..."> tags, or set
+     background-image on .img-slot, once you have your photos. */
+  .img-slot{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+      repeating-linear-gradient(135deg,
+        rgba(33,28,23,0.05) 0 10px,
+        rgba(33,28,23,0.02) 10px 20px);
+    border:1.5px dashed rgba(33,28,23,0.3);
+    color:rgba(33,28,23,0.55);
+    font-family:var(--font-body);
+    font-size:13px;
+    letter-spacing:.03em;
+    padding:16px;
+  }
+  .img-slot span{max-width:220px;}
+  .img-slot small{display:block;margin-top:6px;opacity:.75;font-size:11px;}
+
+  /* ---------- Announcement bar ---------- */
+  .announce{
+    background:var(--ink);
+    color:var(--parchment);
+    text-align:center;
+    font-size:13px;
+    letter-spacing:.04em;
+    padding:9px 16px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header{
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-size:24px;
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+  .logo-img{
+    width:110px;
+    height:auto;
+  }
+  .logo em{font-style:normal;color:var(--wine);}
+  nav.primary ul{display:flex;gap:36px;}
+  nav.primary a{
+    font-size:14px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav.primary a::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:0;
+    height:1px;
+    background:var(--brass);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s ease;
+  }
+  nav.primary a:hover::after,
+  nav.primary a:focus-visible::after{transform:scaleX(1);}
+
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:8px 10px;
+    font-size:14px;
+    font-family:var(--font-body);
+    cursor:pointer;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:var(--ink);
+    color:var(--ivory);
+    min-height:640px;
+  }
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
+    z-index:1;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    padding:150px 24px 120px;
+    text-align:center;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .hero .eyebrow{
+    font-size:13px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--brass-light);
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(48px,8vw,84px);
+    line-height:1;
+    margin:0 0 20px;
+  }
+  .hero p.lede{
+    font-size:clamp(16px,2vw,19px);
+    color:rgba(251,248,241,0.82);
+    margin:0 0 42px;
+  }
+  .hero-ctas{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    font-family:var(--font-body);
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:15px 30px;
+    border-radius:2px;
+    transition:transform .2s ease, background .2s ease, color .2s ease;
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:var(--brass-light);
+    color:var(--ink);
+  }
+  .btn-primary:hover{background:var(--ivory);transform:translateY(-1px);}
+  .btn-ghost{
+    border-color:rgba(251,248,241,0.5);
+    color:var(--ivory);
+  }
+  .btn-ghost:hover{border-color:var(--ivory);transform:translateY(-1px);}
+
+  @media (prefers-reduced-motion: reduce){
+    .btn, nav.primary a::after{transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:96px 0;}
+  .section-head{
+    max-width:640px;
+    margin:0 auto 56px;
+    text-align:center;
+  }
+  .section-head .kicker{
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--wine);
+    margin-bottom:14px;
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(30px,4vw,42px);
+    margin:0 0 18px;
+  }
+  .section-head p{
+    color:rgba(33,28,23,0.72);
+    font-size:16px;
+  }
+
+  /* ---------- Welcome ---------- */
+  .welcome{background:var(--parchment);}
+
+  /* ---------- Collection grid ---------- */
+  .collection{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .collection-card{
+    display:flex;
+    flex-direction:column;
+  }
+  .collection-card .img-slot{
+    aspect-ratio:768/1045;
+    border-radius:2px;
+    margin-bottom:20px;
+  }
+  .collection-card h3{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:20px;
+    margin:0 0 10px;
+    letter-spacing:.01em;
+  }
+  .collection-card a.explore{
+    font-size:13px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--wine);
+    border-bottom:1px solid var(--wine);
+    padding-bottom:2px;
+    align-self:flex-start;
+  }
+
+  /* ---------- Shipping & payment ---------- */
+  .shipping{
+    background:var(--ink);
+    color:var(--ivory);
+  }
+  .shipping .wrap{
+    max-width:760px;
+    text-align:center;
+  }
+  .shipping .kicker{color:var(--brass-light);}
+  .shipping h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(28px,3.6vw,38px);
+    margin:0 0 22px;
+  }
+  .shipping p{
+    color:rgba(251,248,241,0.82);
+    font-size:16px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--parchment-dim);
+    padding:64px 0 32px;
+    font-size:14px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:48px;
+  }
+  footer .logo{margin-bottom:14px;}
+  footer .foot-tagline{color:rgba(33,28,23,0.7);max-width:300px;}
+  footer h4{
+    font-family:var(--font-body);
+    font-size:13px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin:0 0 16px;
+    color:rgba(33,28,23,0.6);
+  }
+  .social-list{display:flex;flex-direction:column;gap:10px;}
+  .contact-list{display:flex;flex-direction:column;gap:10px;}
+  .footer-bottom{
+    border-top:1px solid var(--line);
+    padding-top:24px;
+    text-align:center;
+    color:rgba(33,28,23,0.6);
+    font-size:13px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .collection{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+    nav.primary{
+      position:absolute;
+      top:100%;left:0;right:0;
+      background:var(--ivory);
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    nav.primary.open{display:block;}
+    nav.primary ul{
+      flex-direction:column;
+      gap:0;
+      padding:8px 24px 20px;
+    }
+    nav.primary li{border-top:1px solid var(--line);}
+    nav.primary a{display:block;padding:14px 0;}
+    .menu-toggle{display:inline-block;}
+    .hero-inner{padding:100px 24px 80px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce">Discover exclusive discounts on rare harps!</div>
+
+<header>
+  <div class="nav-row wrap">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Harpsale" class="logo-img">
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" id="menuToggle">Menu</button>
+    <nav class="primary" id="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="harps.html">Harps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+ 
+  <section class="hero">
+   <img src="MainBackgroundImage.jpg" alt="Painting of a woman playing a gold harp beside a grand piano in a sunlit archway" class="hero-bg"> 
+    <div class="hero-inner">
+      <div class="eyebrow">Rare &amp; Handcrafted</div>
+      <h1>Harpsale</h1>
+      <p class="lede">Curated Selection of Handcrafted Instruments — Shop with Confidence</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="contact.html">Schedule an Appointment</a>
+        <a class="btn btn-ghost" href="#welcome">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WELCOME ================= -->
+  <section class="welcome" id="welcome">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Welcome to Harpsale</div>
+        <h2>The elegance and craftsmanship of our harp collection</h2>
+        <p>At Harpsale, we pride ourselves on offering a stunning selection of handcrafted harps that cater to both professional musicians and passionate enthusiasts. Our curated collection features the finest instruments from renowned makers, ensuring that each harp delivers unparalleled quality and performance.</p>
+      </div>
+
+      <!-- ================= COLLECTION GRID ================= -->
+      <div class="collection">
+
+        <div class="collection-card">
+            <img src="imageMain1.jpg" alt="..."> 
+              
+          <h3>Rare Harps Collection</h3>
+          <a class="explore" href="harps.html">Explore Options</a>
+        </div>
+
+        <div class="collection-card">
+          <img src="imageMain2.jpg" alt="..."> 
+               
+          
+          <h3>Handcrafted Instruments</h3>
+          <a class="explore" href="harps.html">Explore Options</a>
+        </div>
+
+        <div class="collection-card">
+          <img src="imageMain3.jpg" alt="..."> 
+               
+          
+          <h3>Elegant Designs</h3>
+          <a class="explore" href="harps.html">Explore Options</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SHIPPING & PAYMENT ================= -->
+  <section class="shipping">
+    <div class="wrap">
+      <div class="kicker">Shipping &amp; Payment</div>
+      <h2>A smooth, worry-free process from purchase to delivery</h2>
+      <p>We offer secure and reliable shipping to ensure your harp arrives safely and promptly, with each instrument carefully packaged to protect it during transit. We accept major credit cards, PayPal, and bank transfers. For international orders, contact us for specific shipping rates and delivery times.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Harp<em>sale</em></a>
+        <p class="foot-tagline">Rare and handcrafted harps for musicians and collectors, curated with care.</p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="social-list">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://x.com/" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <div class="contact-list">
+          <a href="mailto:Harpsaless@gmail.com">Harpsaless@gmail.com</a>
+          <a href="tel:+13476950761">+1 347-695-0761</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2026 Harpsale — All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('primary-nav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

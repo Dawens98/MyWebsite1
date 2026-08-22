@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rare Handcrafted Harps for Musicians | Harpsale</title>
+<meta name="description" content="Discover a curated selection of rare and handcrafted harps at Harpsale. Explore fine instruments like Lyon & Healy and Wurlitzer, with detailed descriptions and secure worldwide shipping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#211c17;
+  --parchment:#f4eede;
+  --parchment-dim:#ece3cd;
+  --brass:#a9813f;
+  --brass-light:#c9a35e;
+  --wine:#5c2430;
+  --ivory:#fbf8f1;
+  --line:rgba(33,28,23,0.14);
+
+  --font-display:'Fraunces', serif;
+  --font-body:'Work Sans', sans-serif;
+
+  --max:1180px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--ivory);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;margin:0;padding:0;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible{
+  outline:2px solid var(--brass);
+  outline-offset:3px;
+}
+
+/* ---------- Image placeholder slots ---------- */
+.img-slot{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(33,28,23,0.05) 0 10px,
+      rgba(33,28,23,0.02) 10px 20px);
+  border:1.5px dashed rgba(33,28,23,0.3);
+  color:rgba(33,28,23,0.55);
+  font-family:var(--font-body);
+  font-size:13px;
+  letter-spacing:.03em;
+  padding:16px;
+}
+.img-slot span{max-width:220px;}
+.img-slot small{display:block;margin-top:6px;opacity:.75;font-size:11px;}
+
+/* ---------- Announcement bar ---------- */
+.announce{
+  background:var(--ink);
+  color:var(--parchment);
+  text-align:center;
+  font-size:13px;
+  letter-spacing:.04em;
+  padding:9px 16px;
+}
+
+/* ---------- Header ---------- */
+header{
+  background:var(--ivory);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.nav-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 24px;
+}
+.logo{
+  font-family:var(--font-display);
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.logo-img{width:110px;height:auto;}.logo em{font-style:normal;color:var(--wine);}
+nav.primary ul{display:flex;gap:36px;}
+nav.primary a{
+  font-size:14px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  position:relative;
+  padding-bottom:4px;
+}
+nav.primary a::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:1px;
+  background:var(--brass);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+}
+nav.primary a:hover::after,
+nav.primary a:focus-visible::after{transform:scaleX(1);}
+nav.primary a[aria-current="page"]{color:var(--wine);}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:8px 10px;
+  font-size:14px;
+  font-family:var(--font-body);
+  cursor:pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:var(--ink);
+  color:var(--ivory);
+  min-height:640px;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:1;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
+  z-index:1;
+}
+.hero-inner{
+  position:relative;
+  z-index:2;
+  padding:150px 24px 120px;
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+}
+.hero .eyebrow{
+  font-size:13px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--brass-light);
+  margin-bottom:22px;
+}
+.hero h1{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(48px,8vw,84px);
+  line-height:1;
+  margin:0 0 20px;
+}
+.hero p.lede{
+  font-size:clamp(16px,2vw,19px);
+  color:rgba(251,248,241,0.82);
+  margin:0 0 42px;
+}
+.hero-ctas{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:15px 30px;
+  border-radius:2px;
+  transition:transform .2s ease, background .2s ease, color .2s ease;
+  border:1px solid transparent;
+  cursor:pointer;
+}
+.btn-primary{
+  background:var(--brass-light);
+  color:var(--ink);
+}
+.btn-primary:hover{background:var(--ivory);transform:translateY(-1px);}
+.btn-ghost{
+  border-color:rgba(251,248,241,0.5);
+  color:var(--ivory);
+}
+.btn-ghost:hover{border-color:var(--ivory);transform:translateY(-1px);}
+
+@media (prefers-reduced-motion: reduce){
+  .btn, nav.primary a::after{transition:none;}
+  html{scroll-behavior:auto;}
+}
+
+/* ---------- Section shell ---------- */
+section{padding:96px 0;}
+.section-head{
+  max-width:640px;
+  margin:0 auto 56px;
+  text-align:center;
+}
+.section-head .kicker{
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--wine);
+  margin-bottom:14px;
+}
+.section-head h2{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(30px,4vw,42px);
+  margin:0 0 18px;
+}
+.section-head p{
+  color:rgba(33,28,23,0.72);
+  font-size:16px;
+}
+
+/* ---------- Welcome ---------- */
+.welcome{background:var(--parchment);}
+
+/* ---------- Collection grid ---------- */
+.collection{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.collection-card{
+  display:flex;
+  flex-direction:column;
+}
+.collection-card .img-slot{
+  aspect-ratio:768/1045;
+  border-radius:2px;
+  margin-bottom:20px;
+}
+.collection-card h3{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:20px;
+  margin:0 0 10px;
+  letter-spacing:.01em;
+}
+.collection-card a.explore{
+  font-size:13px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--wine);
+  border-bottom:1px solid var(--wine);
+  padding-bottom:2px;
+  align-self:flex-start;
+}
+
+/* ---------- Shipping & payment ---------- */
+.shipping{
+  background:var(--ink);
+  color:var(--ivory);
+}
+.shipping .wrap{
+  max-width:760px;
+  text-align:center;
+}
+.shipping .kicker{color:var(--brass-light);}
+.shipping h2{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(28px,3.6vw,38px);
+  margin:0 0 22px;
+}
+.shipping p{
+  color:rgba(251,248,241,0.82);
+  font-size:16px;
+}
+
+/* ---------- Page header (Shop / Harps / About / Contact) ---------- */
+.page-header{
+  background:var(--parchment);
+  padding:64px 0 48px;
+  text-align:center;
+}
+.page-header h1{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(34px,5vw,52px);
+  margin:0;
+}
+
+/* ---------- Shop toolbar ---------- */
+.shop-toolbar{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:10px;
+  margin-bottom:32px;
+  font-size:14px;
+}
+.shop-toolbar label{color:rgba(33,28,23,0.7);}
+.shop-toolbar select{
+  font-family:var(--font-body);
+  font-size:14px;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:2px;
+  background:var(--ivory);
+  color:var(--ink);
+}
+
+/* ---------- Product grid ---------- */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:28px;
+}
+.product-card-link{
+  display:block;
+  height:100%;
+}
+.product-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  border:1px solid var(--line);
+  background:var(--ivory);
+  overflow:hidden;
+}
+.product-card > img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  object-position:center;
+  border-bottom:1px solid var(--line);
+}
+.product-info{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  padding:18px 18px 22px;
+}
+.product-info h3{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:16px;
+  line-height:1.3;
+  margin:0 0 8px;
+}
+.product-price{
+  margin-top:auto;
+  font-size:14px;
+  color:rgba(33,28,23,0.75);
+}
+
+/* ---------- Footer ---------- */
+footer{
+  background:var(--parchment-dim);
+  padding:64px 0 32px;
+  font-size:14px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:40px;
+  margin-bottom:48px;
+}
+footer .logo{margin-bottom:14px;}
+footer .foot-tagline{color:rgba(33,28,23,0.7);max-width:300px;}
+footer h4{
+  font-family:var(--font-body);
+  font-size:13px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin:0 0 16px;
+  color:rgba(33,28,23,0.6);
+}
+.social-list{display:flex;flex-direction:column;gap:10px;}
+.contact-list{display:flex;flex-direction:column;gap:10px;}
+.footer-bottom{
+  border-top:1px solid var(--line);
+  padding-top:24px;
+  text-align:center;
+  color:rgba(33,28,23,0.6);
+  font-size:13px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  .collection{grid-template-columns:1fr;}
+  .product-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  nav.primary{
+    position:absolute;
+    top:100%;left:0;right:0;
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+    display:none;
+  }
+  nav.primary.open{display:block;}
+  nav.primary ul{
+    flex-direction:column;
+    gap:0;
+    padding:8px 24px 20px;
+  }
+  nav.primary li{border-top:1px solid var(--line);}
+  nav.primary a{display:block;padding:14px 0;}
+  .menu-toggle{display:inline-block;}
+  .hero-inner{padding:100px 24px 80px;}
+}
+@media (max-width:520px){
+  .product-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">Discover exclusive discounts on rare harps!</div>
+
+<header>
+  <div class="nav-row wrap">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Harpsale" class="logo-img"></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" id="menuToggle">Menu</button>
+    <nav class="primary" id="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" aria-current="page">Shop</a></li>
+        <li><a href="harps.html">Harps</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= PAGE HEADER ================= -->
+  <div class="page-header">
+    <h1>Shop</h1>
+  </div>
+
+  <!-- ================= PRODUCT GRID ================= -->
+  <section>
+    <div class="wrap">
+
+      <div class="shop-toolbar">
+        <label for="sortSelect">Sort by:</label>
+        <select id="sortSelect">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A to Z</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+
+<a href="pleyel-cross-strung-harp-luteDes.html" class="product-card-link">
+  <div class="product-card" data-price="20000" data-name="Pleyel Cross-strung Harp-Lute">
+    <img src="image30.jpg" alt="Pleyel Cross-strung Harp-Lute">
+
+    <div class="product-info">
+      <h3>Pleyel Cross-strung Harp-Lute</h3>
+      <div class="product-price">$20000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="pleyel-cross-strungDes.html" class="product-card-link">
+  <div class="product-card" data-price="10000" data-name="Pleyel Cross-strung">
+    <img src="image29.jpg" alt="Pleyel Cross-strung harp">
+
+    <div class="product-info">
+      <h3>Pleyel Cross-strung</h3>
+      <div class="product-price">$10000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="Lyon-&-Healy-special-Style-26Des.html" class="product-card-link">
+  <div class="product-card" data-price="50000" data-name="Lyon & Healy special Style 26">
+    <img src="image19.jpg" alt="Lyon and Healy Special Style 26 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy special Style 26</h3>
+      <div class="product-price">$50000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="Lyon-&-Healy-Style-90th-Anniversary-SpecialDes.html" class="product-card-link">
+  <div class="product-card" data-price="25000" data-name="Lyon & Healy Style 90th Anniversary Special">
+    <img src="image18.jpg" alt="Lyon and Healy Style 90th Anniversary Special harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy Style 90th Anniversary Special</h3>
+      <div class="product-price">$25000.00</div>
+    </div>
+  </div>
+</a>
+        
+
+
+<a href="Lyon-&-Healy-special-Style-25Des.html" class="product-card-link">
+  <div class="product-card" data-price="30000" data-name="Lyon & Healy special Style 25">
+    <img src="image17.jpg" alt="Lyon and Healy Special Style 25 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy special Style 25</h3>
+      <div class="product-price">$30000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-style-24Des.html" class="product-card-link">
+  <div class="product-card" data-price="20000" data-name="Lyon & Healy Style 24">
+    <img src="image16.jpg" alt="Lyon and Healy Style 24 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy Style 24</h3>
+      <div class="product-price">$20000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-style-22Des.html" class="product-card-link">
+  <div class="product-card" data-price="25000" data-name="Lyon & Healy Style 22">
+    <img src="image14.jpg" alt="Lyon and Healy Style 22 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy Style 22</h3>
+      <div class="product-price">$25000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-style-22-bDes.html" class="product-card-link">
+  <div class="product-card" data-price="20000" data-name="Lyon & Healy Style 22">
+    <img src="image13.jpg" alt="Lyon and Healy Style 22 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy Style 22</h3>
+      <div class="product-price">$20000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-style-19Des.html" class="product-card-link">
+  <div class="product-card" data-price="15000" data-name="Lyon & Healy Style 19">
+    <img src="image9.jpg" alt="Lyon and Healy Style 19 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy Style 19</h3>
+      <div class="product-price">$15000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-special-style-13Des.html" class="product-card-link">
+  <div class="product-card" data-price="100000" data-name="Lyon & Healy special Style 13">
+    <img src="image7.jpg" alt="Lyon and Healy Special Style 13 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy special Style 13</h3>
+      <div class="product-price">$100000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-special-art-neveau-style-11Des.html" class="product-card-link">
+  <div class="product-card" data-price="60000" data-name="Lyon & Healy special Art Neveau Style 11">
+    <img src="image3.jpg" alt="Lyon and Healy Special Art Nouveau Style 11 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy special Art Neveau Style 11</h3>
+      <div class="product-price">$60000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-special-style-3Des.html" class="product-card-link">
+  <div class="product-card" data-price="60000" data-name="Lyon & Healy special Style 3">
+    <img src="image1.jpg" alt="Lyon and Healy Special Style 3 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy special Style 3</h3>
+      <div class="product-price">$60000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-style-12Dest.html" class="product-card-link">
+  <div class="product-card" data-price="13000" data-name="Lyon & Healy Style 12">
+    <img src="image2.jpg" alt="Lyon and Healy Style 12 harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy Style 12</h3>
+      <div class="product-price">$13000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="erard-louis-xvi-scroll-topDes.html" class="product-card-link">
+  <div class="product-card" data-price="25000" data-name="Erard Louis XVI Scroll Top Harp">
+    <img src="image24.jpg" alt="Erard Louis XVI Scroll Top harp">
+
+    <div class="product-info">
+      <h3>Erard Louis XVI Scroll Top Harp</h3>
+      <div class="product-price">$25000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="lyon-healy-special-style-11-pinkDest.html" class="product-card-link">
+  <div class="product-card" data-price="60000" data-name="Lyon & Healy special Style 11 pink">
+    <img src="image4.jpg" alt="Lyon and Healy Special Style 11 pink harp">
+
+    <div class="product-info">
+      <h3>Lyon &amp; Healy special Style 11 pink</h3>
+      <div class="product-price">$60000.00</div>
+    </div>
+  </div>
+</a>
+
+<a href="wurlitzer-ccxDes.html" class="product-card-link">
+  <div class="product-card" data-price="35000" data-name="Wurlitzer CCX">
+    <img src="image27.jpg" alt="Wurlitzer CCX harp">
+
+    <div class="product-info">
+      <h3>Wurlitzer CCX</h3>
+      <div class="product-price">$35000.00</div>
+    </div>
+  </div>
+</a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Harp<em>sale</em></a>
+        <p class="foot-tagline">Rare and handcrafted harps for musicians and collectors, curated with care.</p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="social-list">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://x.com/" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <div class="contact-list">
+          <a href="mailto:Harpsaless@gmail.com">Harpsaless@gmail.com</a>
+          <a href="tel:+13476950761">+1 347-695-0761</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2026 Harpsale — All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('primary-nav');
+
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  var sortSelect = document.getElementById('sortSelect');
+  var grid = document.getElementById('productGrid');
+  var originalOrder = Array.prototype.slice.call(grid.children);
+
+  function getProductData(link) {
+    return link.querySelector('.product-card').dataset;
+  }
+
+  sortSelect.addEventListener('change', function () {
+    var products = Array.prototype.slice.call(grid.children);
+    var value = sortSelect.value;
+
+    if (value === 'default') {
+      products = originalOrder;
+    } else if (value === 'price-asc') {
+      products.sort(function (a, b) {
+        return Number(getProductData(a).price) - Number(getProductData(b).price);
+      });
+    } else if (value === 'price-desc') {
+      products.sort(function (a, b) {
+        return Number(getProductData(b).price) - Number(getProductData(a).price);
+      });
+    } else if (value === 'name-asc') {
+      products.sort(function (a, b) {
+        return getProductData(a).name.localeCompare(getProductData(b).name);
+      });
+    }
+
+    products.forEach(function (product) {
+      grid.appendChild(product);
+    });
+  });
+</script>
+
+</body>
+</html>
