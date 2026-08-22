@@ -328,16 +328,20 @@ footer h4{
           
         </div>
 
-        <!-- ================= FORM ================= -->
+       <!-- ================= FORM ================= -->
         <div>
-          <!--
-            This form uses Formspree (free) to email submissions to you
-            with no backend/PHP required.
-            1. Go to https://formspree.io and create a free account.
-            2. Create a new form and copy your form ID (looks like "abcdwxyz").
-            3. Replace YOUR_FORM_ID below with that ID.
-          -->
           <form action="https://formspree.io/f/mwlezblp" method="POST" id="contactForm">
+            <!--
+              Spam protection: this hidden field is a "honeypot."
+              Real visitors never see or fill it (display:none), but most
+              spam bots auto-fill every field they find. If this field
+              has any value when submitted, Formspree silently discards
+              the message before it ever reaches your inbox.
+              Leave this exactly as-is — don't remove it or give it a
+              visible label.
+            -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
             <div class="form-row">
               <div>
                 <label for="name">Name</label>
@@ -360,7 +364,6 @@ footer h4{
             <p class="form-status" id="formStatus"></p>
           </form>
         </div>
-
       </div>
     </div>
   </section>
